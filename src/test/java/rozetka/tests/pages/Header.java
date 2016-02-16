@@ -2,6 +2,7 @@ package rozetka.tests.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -35,6 +36,9 @@ public class Header extends BasePage {
     @FindBy (xpath = "//a[@name='close']")
     private WebElement closeConfirmEmailPopupLink;
 
+    @FindBy (name = "signout")
+    private WebElement signOutLink;
+
     public Header(WebDriver driver) {
         super(driver);
     }
@@ -44,10 +48,11 @@ public class Header extends BasePage {
     }
 
     public void logOut(){
-        logInLink.click();
-        PersonalPage personalPage = new PersonalPage(driver);
-        personalPage.signOut();
+        Actions action = new Actions(driver);
+        action.moveToElement(logInLink).perform();
+        if (isElementPresent(signOutLink)) signOutLink.click();
     }
+
     public void logInAs(String login, String password){
         String oldLinkText = getLoginLinkText();
         logInLink.click();
@@ -58,7 +63,7 @@ public class Header extends BasePage {
         loginButton.click();
         WebDriverWait wait = new WebDriverWait(driver, 3);
         wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(logInLink,oldLinkText)));
-        closeConfirmEmailPopupLink.click();
+        if (isElementPresent(closeConfirmEmailPopupLink)) closeConfirmEmailPopupLink.click();
     }
 
     public void clickOnSearchBar(){

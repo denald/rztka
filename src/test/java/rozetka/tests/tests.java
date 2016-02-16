@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.*;
 import rozetka.tests.pages.*;
 
@@ -27,24 +28,23 @@ public class tests {
     public void setUp(){
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(BASE_URL);
         homePage = new HomePage(driver);
     }
 
-//    @AfterClass
-//    public void tearDown(){
-//        driver.quit();
-//    }
+    @AfterClass
+    public void tearDown(){
+        driver.quit();
+    }
 
     @BeforeMethod
     public void setupMethod(){
         driver.get(BASE_URL);
     }
 
-//    @AfterMethod
-//    public void tearDownMethod(){
-//        homePage.header().logOut();
-//    }
+    @AfterMethod
+    public void tearDownMethod(){
+        homePage.header().logOut();
+    }
 
     @Test
     public void testLogin(){
@@ -55,8 +55,11 @@ public class tests {
     @Test
     //TODO: finish this test
     public void testNewCategoriesArePresent(){
-        homePage.getCategoriesListWithNewBadge();
-
+        String expectedColor = "rgba(251, 63, 76, 1)";
+        Reporter.log("There are " + homePage.getNewBadges().size() + " NEW badges in main menu");
+        for(WebElement category : homePage.getNewBadges()){
+            Assert.assertEquals(category.getCssValue("background-color"), expectedColor, "Color doesn't matches");
+        }
     }
 
     @Test
@@ -74,6 +77,7 @@ public class tests {
         String keyword = "samsung";
         String expectedColor = "rgba(51, 51, 51, 1)";
         int position = 3;
+
         homePage.header().logInAs(USER_LOGIN, USER_PASSWORD);
         SearchPage searchPage = homePage.header().searchFor(keyword);
         Assert.assertEquals(searchPage.getSearchResultTitleText(), keyword,
@@ -90,21 +94,19 @@ public class tests {
         }
         Assert.assertTrue(list.contains(productName),
                 "Item is not present in wishlist");
-        wishListPage.header().logOut();
+
     }
 
     @Test
     public void testCase05(){
         int phonePosition = 3;
         final String PRODUCT_MANUFACTURER = "HTC";
+
         ProductsPage phonesPage = homePage.goToSmartfonesMenu();
         phonesPage.selectProductManufacturer(PRODUCT_MANUFACTURER);
-        String phoneName = phonesPage.getProductNameByPosition(phonePosition);
         String phonePrice = phonesPage.getProductPriceByPosition(phonePosition);
         String  reviewRate = phonesPage.getProductReviewRateByPosition(phonePosition);
         ProductDetailsPage phoneDetailsPage = phonesPage.selectProductByPosition(phonePosition);
-//        Assert.assertEquals(phoneDetailsPage.getProductName(), phoneName,
-//                "Name is not matching");
         Assert.assertEquals(phoneDetailsPage.getReviewsRate(), reviewRate,
                 "Reviews count is not matching");
         Assert.assertEquals(phoneDetailsPage.getProductPrice(), phonePrice,

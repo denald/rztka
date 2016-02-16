@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,8 +20,8 @@ import java.util.List;
  */
 public class HomePage extends BasePage {
 
-    @FindBy (xpath = "//a[@is_new='new']")
-    private List<WebElement> categoriesWithNew;
+    @FindBy (xpath = "//span[@class='new m-main-l-i-new']")
+    private List<WebElement> newBadges;
 
     @FindBy (xpath = "/html")
     private WebElement bodyOfThePage;
@@ -36,9 +37,9 @@ public class HomePage extends BasePage {
         super(driver);
         PageFactory.initElements(driver, this);
     }
-    public void getCategoriesListWithNewBadge(){
-        //This method returns both Catefories and Subcategories with badge NEW
-        System.out.println(categoriesWithNew.size());
+
+    public List<WebElement> getNewBadges(){
+        return newBadges;
     }
 
     public ProductsPage goToSmartfonesMenu(){

@@ -9,12 +9,11 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 public class BasePage {
 
     protected WebDriver driver;
-
-//    public Header header = new Header (driver);
 
     public BasePage (WebDriver driver){
 
@@ -43,13 +42,17 @@ public class BasePage {
     }
 
     public Boolean isElementPresent(WebElement element){
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         try{
             element.isDisplayed();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             return true;
         }
         catch (NoSuchElementException e){
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             return false;
         }
+
 
     }
 
