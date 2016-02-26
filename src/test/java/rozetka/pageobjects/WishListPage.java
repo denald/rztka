@@ -1,4 +1,4 @@
-package rozetka.tests.pages;
+package rozetka.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

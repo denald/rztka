@@ -1,44 +1,30 @@
 package rozetka.tests;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.*;
-import rozetka.tests.pages.*;
+import rozetka.pageobjects.*;
+import rozetka.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by dlapin on 2/10/2016.
  */
-public class tests {
+public class Tests extends TestRunner {
 
-    private WebDriver driver;
     private String BASE_URL = "http://rozetka.com.ua";
     private HomePage homePage;
     private final String USER_LOGIN = "denysltest12312313@gmail.com";
     private final String USER_PASSWORD = "qaZser56$";
     private final String USER_NAME = "Deee";
 
-    @BeforeClass
-    public void setUp(){
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        homePage = new HomePage(driver);
-    }
-
-    @AfterClass
-    public void tearDown(){
-        driver.quit();
-    }
-
     @BeforeMethod
     public void setupMethod(){
         driver.get(BASE_URL);
+        homePage = new HomePage(driver);
     }
 
     @AfterMethod
@@ -67,7 +53,7 @@ public class tests {
         homePage.header().clickOnSearchBar();
         Assert.assertTrue(homePage.header().searchButtonIsDisplayed(),
                 "Button is not visible");
-        homePage.removeFocusFromEverything();
+        Utils.removeFocusFromEverything(driver);
         Assert.assertFalse(homePage.header().searchButtonIsDisplayed(),
                 "Button is still visible");
     }
