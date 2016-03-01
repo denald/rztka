@@ -4,23 +4,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import rozetka.elements.Button;
+import rozetka.elements.TextElement;
+import rozetka.locators.SearchPageLocators;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by dlapin on 2/12/2016.
- */
-public class SearchPage extends BasePage{
 
-    @FindBy(className = "search-result-title-text")
-    private WebElement searchResultTitleText;
+public class SearchPage extends Header{
 
-    @FindBy (className = "btn-link-i")
-    private WebElement submitToWishListPopupButton;
-
-    @FindBy (className = "popup-close")
-    private WebElement closeWishPopupIcon;
+    final private TextElement searchResultTitleText = new TextElement(driver, SearchPageLocators.SEARCH_RESULTS_TITLE_TEXT.getBy());
+    final private Button submitToWishListPopupButton = new Button(driver, SearchPageLocators.SUBMIT_TO_WISHLIST_POPUP_BUTTON.getBy());
+    final private Button closeWishPopupIcon = new Button(driver, SearchPageLocators.CLOSE_WISHLIST_POPUP_ICON.getBy());
 
     @FindBy (className = "g-i-list-title")
     private List<WebElement> titlesOnSearchPage;

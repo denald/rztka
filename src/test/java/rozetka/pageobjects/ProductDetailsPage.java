@@ -3,26 +3,20 @@ package rozetka.pageobjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import rozetka.elements.Link;
+import rozetka.elements.TextElement;
+import rozetka.locators.ProductDetailsPageLocators;
 
 /**
  * Created by dlapin on 2/15/2016.
  */
-public class ProductDetailsPage extends BasePage {
+public class ProductDetailsPage extends Header {
 
-    @FindBy (className = "detail-title")
-    private WebElement productPageTitle;
-
-    @FindBy (xpath = "//div[@class='detail-price-uah']")
-    private WebElement productPrice;
-
-    @FindBy (xpath = "//span[@class='sprite g-rating-stars-i-medium']")
-    private WebElement reviewRate;
-
-    @FindBy (xpath = "//span[@itemprop='aggregateRating']")
-    private WebElement reviewsCount;
-
-    @FindBy (className = "pp-review-heading-title")
-    private WebElement reviewDetailsTabTitle;
+    final private TextElement productPageTitle = new TextElement(driver, ProductDetailsPageLocators.PRODUCT_PAGE_TITLE.getBy());
+    final private TextElement productPrice = new TextElement(driver, ProductDetailsPageLocators.PRODUCT_PRICE.getBy());
+    final private TextElement reviewRate = new TextElement(driver, ProductDetailsPageLocators.REVIEW_RATE.getBy());
+    final private Link reviewsCount = new Link(driver, ProductDetailsPageLocators.REVIEWS_COUNT.getBy());
+    final private TextElement reviewDetailsTabTitle = new TextElement(driver, ProductDetailsPageLocators.REVIEW_DETAILS_TAB_TITLE.getBy());
 
     public ProductDetailsPage(WebDriver driver) {
         super(driver);
@@ -36,7 +30,6 @@ public class ProductDetailsPage extends BasePage {
         return productPrice.getText().replaceAll("[^\\d.]+", "");
 
     }
-
     public String getProductName(){
         return "";
     }
@@ -49,8 +42,8 @@ public class ProductDetailsPage extends BasePage {
         reviewsCount.click();
     }
 
-
-    public WebElement getReviewDetailsTabTitle() {
-        return reviewDetailsTabTitle;
-    }
+//    @TODO: Fix this!!!!
+//    public WebElement getReviewDetailsTabTitle() {
+//        return reviewDetailsTabTitle;
+//    }
 }

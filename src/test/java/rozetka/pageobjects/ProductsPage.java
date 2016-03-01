@@ -3,9 +3,7 @@ package rozetka.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-/**
- * Created by dlapin on 2/15/2016.
- */
+
 public class ProductsPage extends BasePage {
 
     String _productManufacturerLocator = "//span[contains(.,'%s')]";

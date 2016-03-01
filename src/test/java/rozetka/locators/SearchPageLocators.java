@@ -8,7 +8,17 @@ public enum SearchPageLocators  implements ILocator {
     SEARCH_RESULTS_TITLE_TEXT(
             "Search results title text",
             LocatorsType.BY_CLASS_NAME,
-            "(search-result-title-text)") ;
+            "search-result-title-text"),
+    SUBMIT_TO_WISHLIST_POPUP_BUTTON(
+            "Submit to wishlist popup button",
+            LocatorsType.BY_CLASS_NAME,
+            "btn-link-i"
+    ),
+    CLOSE_WISHLIST_POPUP_ICON(
+            "Close wishlist popup icon",
+            LocatorsType.BY_CLASS_NAME,
+            "popup-close"
+    );
 
 
     private String name;

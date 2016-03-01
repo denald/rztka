@@ -1,18 +1,12 @@
 package rozetka.pageobjects;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import rozetka.elements.Link;
+import rozetka.locators.PersonalPageLocators;
 
-/**
- * Created by dlapin on 2/11/2016.
- */
-public class PersonalPage extends BasePage {
+public class PersonalPage extends Header {
 
-
-    @FindBy(id = "profile_signout")
-    private WebElement signOutLink;
-
+    final private Link signOutLink = new Link(driver, PersonalPageLocators.SIGN_OUT_LINK.getBy());
 
     public PersonalPage(WebDriver driver) {
         super(driver);

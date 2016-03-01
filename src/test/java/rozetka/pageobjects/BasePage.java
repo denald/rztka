@@ -19,4 +19,16 @@ public class BasePage {
         return driver.findElements(locator.getBy()).size() != 0;
     }
 
+    public void refresh(final WebDriver driver){
+        driver.navigate().refresh();
+    }
+
+    public void back(final WebDriver driver){
+        driver.navigate().back();
+    }
+
+    public void forward(final WebDriver driver){
+        driver.navigate().forward();
+    }
+
 }

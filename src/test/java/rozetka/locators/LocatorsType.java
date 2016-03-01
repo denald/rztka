@@ -33,6 +33,12 @@ public enum LocatorsType {
         public By getBy(final String locator){
             return By.xpath(locator);
         }
+    },
+    BY_PARTIAL_LINK_TEXT{
+        @Override
+        public By getBy(final String locator){
+            return By.partialLinkText(locator);
+        }
     };
 
     public abstract By getBy(String locator);
