@@ -23,17 +23,17 @@ public class Utils {
     }
 
 
-//    public Boolean isElementPresent(WebDriver driver, WebElement element) {
-//        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-//        try {
-//            element.isDisplayed();
-//            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//            return true;
-//        } catch (NoSuchElementException e) {
-//            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//            return false;
-//        }
-//    }
+    public Boolean isElementPresent(WebDriver driver, WebElement element) {
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+        try {
+            element.isDisplayed();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            return true;
+        } catch (NoSuchElementException e) {
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            return false;
+        }
+    }
 
     public static void removeFocusFromEverything(final WebDriver driver){
         JavascriptExecutor js = (JavascriptExecutor) driver;

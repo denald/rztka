@@ -18,6 +18,16 @@ public enum SearchPageLocators  implements ILocator {
             "Close wishlist popup icon",
             LocatorsType.BY_CLASS_NAME,
             "popup-close"
+    ),
+    TITLES_ON_SEARCH_PAGE(
+            "Titles on search page",
+            LocatorsType.BY_CLASS_NAME,
+            "g-i-list-title"
+    ),
+    REVIEWS_COUNT_LIST(
+            "List of reviews count",
+            LocatorsType.BY_CLASS_NAME,
+            "g-rating-reviews"
     );
 
 

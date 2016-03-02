@@ -4,11 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import rozetka.elements.Button;
-import rozetka.elements.Link;
-import rozetka.elements.TextBox;
+import rozetka.elements.*;
 import rozetka.locators.HeaderLocators;
-
+import rozetka.utils.Utils;
 /**
  * Created by dlapin on 2/12/2016.
  */
@@ -20,7 +18,7 @@ public class Header <T> extends BasePage {
     private Button loginButton = new Button(driver, HeaderLocators.LOGIN_BUTTON.getBy());
     private TextBox searchBar = new TextBox(driver, HeaderLocators.SEARCH_BAR_TEXT_BOX.getBy());
     private Button searchButton = new Button(driver, HeaderLocators.SEARCH_BUTTON.getBy());
-    private Button wishlistIcon = new Button(driver, HeaderLocators.WISHLIST_ICON.getBy());
+    private Button wishListIcon = new Button(driver, HeaderLocators.WISHLIST_ICON.getBy());
     private Link closeConfirmEmailPopupLink = new Link(driver, HeaderLocators.CLOSE_CONFIRMATION_POPUP_LINK.getBy());
     private Link signOutLink = new Link(driver, HeaderLocators.SIGNOUT_LINK.getBy());
 
@@ -62,7 +60,6 @@ public class Header <T> extends BasePage {
     }
 
     public SearchPage searchFor(String keyword){
-        searchBar.clear();
         searchBar.sendKeys(keyword);
         searchButton.click();
         if (isElementPresent(closeConfirmEmailPopupLink))

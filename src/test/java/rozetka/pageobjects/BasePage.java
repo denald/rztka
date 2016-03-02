@@ -2,6 +2,8 @@ package rozetka.pageobjects;
 import org.openqa.selenium.*;
 import rozetka.locators.interfaces.ILocator;
 
+import java.util.List;
+
 
 public class BasePage {
 
@@ -17,6 +19,10 @@ public class BasePage {
 
     public boolean isElementDisplayed(final ILocator locator){
         return driver.findElements(locator.getBy()).size() != 0;
+    }
+
+    public List<WebElement> getAll(By byLocator){
+        return this.driver.findElements(byLocator);
     }
 
     public void refresh(final WebDriver driver){

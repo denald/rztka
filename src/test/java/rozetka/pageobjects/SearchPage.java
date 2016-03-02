@@ -17,15 +17,8 @@ public class SearchPage extends Header{
     final private TextElement searchResultTitleText = new TextElement(driver, SearchPageLocators.SEARCH_RESULTS_TITLE_TEXT.getBy());
     final private Button submitToWishListPopupButton = new Button(driver, SearchPageLocators.SUBMIT_TO_WISHLIST_POPUP_BUTTON.getBy());
     final private Button closeWishPopupIcon = new Button(driver, SearchPageLocators.CLOSE_WISHLIST_POPUP_ICON.getBy());
-
-    @FindBy (className = "g-i-list-title")
-    private List<WebElement> titlesOnSearchPage;
-
-    @FindBy (className = "g-rating-reviews")
-    private List<WebElement> reviewsCountList;
-
-
-
+    final private List<WebElement> titlesOnSearchPage = getAll(SearchPageLocators.TITLES_ON_SEARCH_PAGE.getBy());
+    final private List<WebElement> reviewsCountList = getAll(SearchPageLocators.REVIEWS_COUNT_LIST.getBy());
 
     public SearchPage(WebDriver driver) {
         super(driver);

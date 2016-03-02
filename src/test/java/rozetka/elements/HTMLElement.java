@@ -21,14 +21,16 @@ public abstract class HTMLElement extends By {
     protected WebDriverWait wait;
 
     private String elementValue;
-    private By elementLocator;
+//    private By elementLocator;
 
     private static final long DEFAULT_TIMEOUT = 5;
 
 
     public HTMLElement(final WebDriver driver, final By elementLocator){
-        this.elementValue = elementValue;
         this.locator = elementLocator;
+        if (driver != null){
+            this.wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
+        }
     }
 
     public By getLocator(){
@@ -41,6 +43,10 @@ public abstract class HTMLElement extends By {
 
     public String getAttribute(String attributeName){
         return waitUntil(ExpectedConditions::presenceOfElementLocated).getAttribute(attributeName);
+    }
+
+    public String getCssValue(String cssSetting){
+        return waitUntil(ExpectedConditions::presenceOfElementLocated).getCssValue(cssSetting);
     }
 
     public Boolean isEnabled(){
@@ -62,6 +68,10 @@ public abstract class HTMLElement extends By {
     private FluentWait<WebDriver> getWait(final Optional<Long> timout){
         return timout.map(sec -> wait.withTimeout(sec, TimeUnit.SECONDS))
                 .orElse(wait.withTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS));
+    }
+
+    public List<WebElement> getAll(final WebDriver driver, final By elementLocator){
+        return driver.findElements(elementLocator);
     }
 
     @Override

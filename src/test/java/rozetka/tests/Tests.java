@@ -29,13 +29,13 @@ public class Tests extends TestRunner {
 
     @AfterMethod
     public void tearDownMethod(){
-        homePage.header().logOut();
+        homePage.logOut();
     }
 
     @Test
     public void testLogin(){
-        homePage.header().logInAs(USER_LOGIN, USER_PASSWORD);
-        Assert.assertTrue(homePage.header().getLoginLinkText().equals(USER_NAME));
+        homePage.logInAs(USER_LOGIN, USER_PASSWORD);
+        Assert.assertTrue(homePage.getLoginLinkText().equals(USER_NAME));
     }
 
     @Test
@@ -50,11 +50,11 @@ public class Tests extends TestRunner {
 
     @Test
     public void testFindButtonBehavior(){
-        homePage.header().clickOnSearchBar();
-        Assert.assertTrue(homePage.header().searchButtonIsDisplayed(),
+        homePage.clickOnSearchBar();
+        Assert.assertTrue(homePage.searchButtonIsDisplayed(),
                 "Button is not visible");
         Utils.removeFocusFromEverything(driver);
-        Assert.assertFalse(homePage.header().searchButtonIsDisplayed(),
+        Assert.assertFalse(homePage.searchButtonIsDisplayed(),
                 "Button is still visible");
     }
 
@@ -64,15 +64,15 @@ public class Tests extends TestRunner {
         String expectedColor = "rgba(51, 51, 51, 1)";
         int position = 3;
 
-        homePage.header().logInAs(USER_LOGIN, USER_PASSWORD);
-        SearchPage searchPage = homePage.header().searchFor(keyword);
+        homePage.logInAs(USER_LOGIN, USER_PASSWORD);
+        SearchPage searchPage = homePage.searchFor(keyword);
         Assert.assertEquals(searchPage.getSearchResultTitleText(), keyword,
                 "Search result Title and Keyword doesn't match");
         Assert.assertTrue(searchPage.getColorOfSearchTitle().equals(expectedColor),
                 "Color doesn't match");
         String productName = searchPage.getProductNameByPosition(position);
         searchPage.addToWishList(position);
-        WishListPage wishListPage = homePage.header().goToWishList();
+        WishListPage wishListPage = homePage.goToWishList();
         wishListPage.takeScreenshot();
         List <String> list = new ArrayList<String>();
         for (WebElement item: wishListPage.getListOfItemsInWishlist()){
@@ -107,7 +107,7 @@ public class Tests extends TestRunner {
         final int productPosition = 1;
         SearchPage searchPage;
 
-        searchPage= homePage.header().searchFor(SEARCH_PHRASE);
+        searchPage= homePage.searchFor(SEARCH_PHRASE);
         List<String> searchResultsTitles = searchPage.getListOfTitles();
         for (String title: searchResultsTitles) {
             Assert.assertTrue(title.contains(KEYWORD),

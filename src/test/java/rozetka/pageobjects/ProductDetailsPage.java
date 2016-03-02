@@ -7,9 +7,6 @@ import rozetka.elements.Link;
 import rozetka.elements.TextElement;
 import rozetka.locators.ProductDetailsPageLocators;
 
-/**
- * Created by dlapin on 2/15/2016.
- */
 public class ProductDetailsPage extends Header {
 
     final private TextElement productPageTitle = new TextElement(driver, ProductDetailsPageLocators.PRODUCT_PAGE_TITLE.getBy());

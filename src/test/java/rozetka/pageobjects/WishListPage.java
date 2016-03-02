@@ -2,19 +2,12 @@ package rozetka.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-
+import rozetka.locators.WishlistPageLocators;
 import java.util.List;
 
-/**
- * Created by dlapin on 2/15/2016.
- */
 public class WishListPage extends BasePage {
 
-    @FindBy (className = "g-i-tile-i-title")
-    private List<WebElement> itemsInWishlist;
-
-
+    private List<WebElement> itemsInWishlist = getAll(WishlistPageLocators.ITEMS_IN_WISHLIST.getBy());
 
     public WishListPage(WebDriver driver) {
         super(driver);
