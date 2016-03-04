@@ -6,13 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import rozetka.elements.Button;
 import rozetka.elements.TextElement;
+import rozetka.locators.HeaderLocators;
 import rozetka.locators.SearchPageLocators;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class SearchPage extends Header{
+public class SearchPage extends Header {
 
     final private TextElement searchResultTitleText = new TextElement(driver, SearchPageLocators.SEARCH_RESULTS_TITLE_TEXT.getBy());
     final private Button submitToWishListPopupButton = new Button(driver, SearchPageLocators.SUBMIT_TO_WISHLIST_POPUP_BUTTON.getBy());
@@ -32,9 +33,11 @@ public class SearchPage extends Header{
         return searchResultTitleText.getCssValue("color");
     }
 
-    public void addToWishList(int position){
+    public SearchPage addToWishList(int position){
         driver.findElements(By.name("towishlist")).get(position-1).click();
         submitToWishlist();
+        isElementPresent(HeaderLocators.WISHLIST_COUNT_ICON.getBy());
+        return this;
     }
 
     public void submitToWishlist(){

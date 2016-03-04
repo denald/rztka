@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
-public class ProductsPage extends BasePage {
+public class ProductsPage extends Header {
 
     String _productManufacturerLocator = "//span[contains(.,'%s')]";
     String _productNameByPositionLocator = "(//div[@class='g-i-tile-i-title clearfix'])[%s]";

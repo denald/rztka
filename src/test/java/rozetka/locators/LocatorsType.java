@@ -6,7 +6,7 @@ public enum LocatorsType {
 
     BY_ID{
       @Override
-        public By getBy(final String locator){
+      public By getBy(final String locator){
           return By.id(locator);
       }
     },

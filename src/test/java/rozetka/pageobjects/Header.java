@@ -1,15 +1,11 @@
 package rozetka.pageobjects;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import rozetka.elements.*;
 import rozetka.locators.HeaderLocators;
-import rozetka.utils.Utils;
-/**
- * Created by dlapin on 2/12/2016.
- */
+
 public class Header <T> extends BasePage {
 
     private Link logInLink = new Link(driver, HeaderLocators.LOGIN_LINK.getBy());
@@ -32,23 +28,22 @@ public class Header <T> extends BasePage {
 
     public void logOut(){
 
-        Actions action = new Actions(driver);
-        action.moveToElement(logInLink).perform();
+        moveToElement(logInLink);
         if (isElementPresent(signOutLink)) signOutLink.click();
     }
 
     public Header logInAs(String login, String password){
         String oldLinkText = getLoginLinkText();
         logInLink.click();
-        emailTextBox.clear();
         emailTextBox.sendKeys(login);
-        passwordTextBox.clear();
         passwordTextBox.sendKeys(password);
         loginButton.click();
         WebDriverWait wait = new WebDriverWait(driver, 3);
-        wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(logInLink,oldLinkText)));
-        if (isElementPresent(closeConfirmEmailPopupLink)) closeConfirmEmailPopupLink.click();
-        return new Header(this.driver);
+        wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElementLocated(logInLink.getLocator(), oldLinkText)));
+        if (isElementPresent(closeConfirmEmailPopupLink.getLocator())) {
+            closeConfirmEmailPopupLink.click();
+        }
+        return this;
     }
 
     public void clickOnSearchBar(){
@@ -56,17 +51,18 @@ public class Header <T> extends BasePage {
     }
 
     public Boolean searchButtonIsDisplayed(){
-        return searchButton.isDisplayed();
+        return isElementPresent(searchButton.getLocator());
     }
 
     public SearchPage searchFor(String keyword){
+        searchBar.click();
         searchBar.sendKeys(keyword);
         searchButton.click();
-        if (isElementPresent(closeConfirmEmailPopupLink))
+        if (isElementPresent(closeConfirmEmailPopupLink.getLocator()))
         {
             closeConfirmEmailPopupLink.click();
         }
-        return new SearchPage(driver);
+        return new SearchPage(this.driver);
     }
 
     public WishListPage goToWishList(){

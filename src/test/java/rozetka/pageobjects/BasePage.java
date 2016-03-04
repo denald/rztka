@@ -1,8 +1,10 @@
 package rozetka.pageobjects;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import rozetka.locators.interfaces.ILocator;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
 public class BasePage {
@@ -12,15 +14,6 @@ public class BasePage {
     public BasePage (final WebDriver driver){
         this.driver = driver;
     }
-
-    public void click(final ILocator locator){
-        driver.findElement(locator.getBy()).click();
-    }
-
-    public boolean isElementDisplayed(final ILocator locator){
-        return driver.findElements(locator.getBy()).size() != 0;
-    }
-
     public List<WebElement> getAll(By byLocator){
         return this.driver.findElements(byLocator);
     }
@@ -37,4 +30,22 @@ public class BasePage {
         driver.navigate().forward();
     }
 
+    public void moveToElement(By elementBy){
+        Actions action = new Actions(this.driver);
+        action.moveToElement(this.driver.findElement(elementBy)).perform();
+    }
+
+    public boolean isElementPresent(By elementBy){
+        try {
+            return this.driver.findElement(elementBy).isDisplayed();
+            //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            //return true;
+        } catch (NoSuchElementException e) {
+            //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            return false;
+        }
+
+//        return driver.findElements(elementBy).size() != 0;
+    }
 }
+

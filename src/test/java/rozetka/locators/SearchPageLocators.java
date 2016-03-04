@@ -3,7 +3,7 @@ package rozetka.locators;
 import org.openqa.selenium.By;
 import rozetka.locators.interfaces.ILocator;
 
-public enum SearchPageLocators  implements ILocator {
+public enum SearchPageLocators implements ILocator {
 
     SEARCH_RESULTS_TITLE_TEXT(
             "Search results title text",
@@ -39,6 +39,10 @@ public enum SearchPageLocators  implements ILocator {
 
 
     SearchPageLocators(final String name, final LocatorsType locatorsType, final String rawLocator){
+        this.name = name;
+        this.locatorsType = locatorsType;
+        this.rawLocator = rawLocator;
+
     }
 
     @Override
@@ -58,11 +62,7 @@ public enum SearchPageLocators  implements ILocator {
 
     @Override
     public By getBy(){
-        if (this.modifiedLocator == null){
-            this.byLocator = this.locatorsType.getBy(this.rawLocator);
-        } else {
-            this.byLocator = this.locatorsType.getBy(this.modifiedLocator);
-        }
-        return this.byLocator;
+        this.byLocator = this.locatorsType.getBy(this.rawLocator);
+        return byLocator;
     }
 }

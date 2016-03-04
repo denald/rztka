@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Utils {
 
-    public void takeScreenshot(WebDriver driver) {
+    public static void takeScreenshot(WebDriver driver) {
         File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String timeStamp = new SimpleDateFormat("yyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         try {

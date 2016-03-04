@@ -20,6 +20,9 @@ public enum  WishlistPageLocators implements ILocator {
 
 
     WishlistPageLocators(final String name, final LocatorsType locatorsType, final String rawLocator){
+        this.name = name;
+        this.locatorsType = locatorsType;
+        this.rawLocator = rawLocator;
     }
 
     @Override

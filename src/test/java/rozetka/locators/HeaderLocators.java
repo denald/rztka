@@ -49,6 +49,11 @@ public enum HeaderLocators implements ILocator {
             "Sign out link",
             LocatorsType.BY_NAME,
             "signout"
+    ),
+    WISHLIST_COUNT_ICON(
+            "Wishlist count icon",
+            LocatorsType.BY_CLASS_NAME,
+            "hub-i-count"
     );
 
     private String name;
