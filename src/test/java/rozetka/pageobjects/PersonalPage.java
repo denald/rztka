@@ -6,7 +6,7 @@ import rozetka.locators.PersonalPageLocators;
 
 public class PersonalPage extends Header {
 
-    final private Link signOutLink = new Link(driver, PersonalPageLocators.SIGN_OUT_LINK.getBy());
+    final private Link signOutLink = new Link(driver, PersonalPageLocators.SIGN_OUT_LINK);
 
     public PersonalPage(WebDriver driver) {
         super(driver);

@@ -14,8 +14,8 @@ import java.util.List;
 public class HomePage extends Header {
 
     final private List<WebElement> newBadges = getAll(HomePageLocators.NEW_BADGES_ICON.getBy());
-    final private Link smartphonesLink = new Link(driver, HomePageLocators.SMARTPHONES_PAGE_LINK.getBy());
-    final private Link subMenuPhones = new Link(driver, HomePageLocators.SUBMENU_PHONES.getBy());
+    final private Link smartphonesLink = new Link(driver, HomePageLocators.SMARTPHONES_PAGE_LINK);
+    final private Link subMenuPhones = new Link(driver, HomePageLocators.SUBMENU_PHONES);
 
 
     public HomePage(WebDriver driver){

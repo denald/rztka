@@ -11,6 +11,7 @@ rozetka\locators\HeaderLocators.class
 rozetka\locators\PersonalPageLocators.class
 rozetka\tests\TestRunner.class
 rozetka\pageobjects\HomePage.class
+rozetka\utils\TestListener.class
 rozetka\elements\HTMLElement.class
 rozetka\locators\ProductDetailsPageLocators.class
 rozetka\locators\HomePageLocators.class

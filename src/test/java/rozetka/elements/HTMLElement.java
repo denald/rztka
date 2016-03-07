@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import rozetka.locators.interfaces.ILocator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,14 +22,16 @@ public abstract class HTMLElement extends By {
     protected By locator;
     protected WebDriverWait wait;
 
-    private String elementValue;
+    private String elementName;
 //    private By elementLocator;
 
     private static final long DEFAULT_TIMEOUT = 5;
 
 
-    public HTMLElement(final WebDriver driver, final By elementLocator){
-        this.locator = elementLocator;
+    public HTMLElement(final WebDriver driver, final ILocator elementLocator){
+
+        this.locator = elementLocator.getBy();
+        this.elementName = elementLocator.getName();
         if (driver != null){
             this.wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
         }
@@ -38,8 +41,8 @@ public abstract class HTMLElement extends By {
         return locator;
     }
 
-    public String getElementValue(){
-        return elementValue;
+    public String getElementName(){
+        return elementName;
     }
 
     public String getAttribute(String attributeName){
@@ -62,7 +65,7 @@ public abstract class HTMLElement extends By {
         try{
             return getWait(timeout).until(condition.apply(getLocator()));
         } catch (Exception e){
-            throw new AssertionError("Unable to find element by " + getLocator() + " = \"" + getElementValue() + "\"", e);
+            throw new AssertionError("Unable to find element by " + getLocator() + " = \"" + getElementName() + "\"", e);
         }
     }
 

@@ -3,6 +3,8 @@ package rozetka.pageobjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import rozetka.locators.WishlistPageLocators;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,7 +21,7 @@ public class WishListPage extends Header {
     }
 
     public List<String> getNamesOfItemsInWishlist(){
-        List<String> names = null;
+        List<String> names = new ArrayList<>();
         names.addAll(itemsInWishlist
                 .stream()
                 .map(WebElement::getText)

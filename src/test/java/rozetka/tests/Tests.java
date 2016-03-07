@@ -29,10 +29,10 @@ public class Tests extends TestRunner {
         homePage = new HomePage(driver);
     }
 
-//    @AfterMethod
-//    public void tearDownMethod(){
-//        homePage.logOut();
-//    }
+    @AfterMethod
+    public void tearDownMethod(){
+        homePage.logOut();
+    }
 
     @Test
     public void testLogin(){
@@ -95,11 +95,14 @@ public class Tests extends TestRunner {
         int phonePosition = 3;
         final String PRODUCT_MANUFACTURER = "HTC";
 
-        ProductsPage phonesPage = homePage.goToSmartfonesMenu();
-        phonesPage.selectProductManufacturer(PRODUCT_MANUFACTURER);
+        ProductsPage phonesPage = homePage
+                .goToSmartfonesMenu()
+                .selectProductManufacturer(PRODUCT_MANUFACTURER);
+
         String phonePrice = phonesPage.getProductPriceByPosition(phonePosition);
         String  reviewRate = phonesPage.getProductReviewRateByPosition(phonePosition);
         ProductDetailsPage phoneDetailsPage = phonesPage.selectProductByPosition(phonePosition);
+
         Assert.assertEquals(phoneDetailsPage.getReviewsRate(), reviewRate,
                 "Reviews count is not matching");
         Assert.assertEquals(phoneDetailsPage.getProductPrice(), phonePrice,
@@ -122,6 +125,7 @@ public class Tests extends TestRunner {
         }
         int countOfReviews = searchPage.getCountOfReviewsByPosition(productPosition);
         ProductDetailsPage productDetailsPage = searchPage.goToProductByPosition(productPosition);
+
         Assert.assertEquals(productDetailsPage.getCountOfreviews(), countOfReviews,
                 "Count of reviews isn't matching");
         productDetailsPage.goToReviewsTab();

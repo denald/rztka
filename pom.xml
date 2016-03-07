@@ -12,6 +12,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -22,6 +23,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
                 <configuration>
+                    <reportsDirectory>${project.basedir}/test-output</reportsDirectory>
                     <properties>
                         <property>
                             <name>usedefaultlisteners</name>
@@ -29,7 +31,7 @@
                         </property>
                         <property>
                             <name>listener</name>
-                            <value>org.uncommons.reportng.HTMLReporter, org.uncommons.reportng.JUnitXMLReporter</value>
+                            <value>org.uncommons.reportng.HTMLReporter, rozetka.utils.TestListener</value>
                         </property>
                     </properties>
                     <workingDirectory>target/</workingDirectory>
@@ -64,6 +66,11 @@
                     <artifactId>testng</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>3.0</version>
         </dependency>
 
     </dependencies>

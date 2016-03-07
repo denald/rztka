@@ -9,11 +9,11 @@ import rozetka.locators.ProductDetailsPageLocators;
 
 public class ProductDetailsPage extends Header {
 
-    final private TextElement productPageTitle = new TextElement(driver, ProductDetailsPageLocators.PRODUCT_PAGE_TITLE.getBy());
-    final private TextElement productPrice = new TextElement(driver, ProductDetailsPageLocators.PRODUCT_PRICE.getBy());
-    final private TextElement reviewRate = new TextElement(driver, ProductDetailsPageLocators.REVIEW_RATE.getBy());
-    final private Link reviewsCount = new Link(driver, ProductDetailsPageLocators.REVIEWS_COUNT.getBy());
-    final private TextElement reviewDetailsTabTitle = new TextElement(driver, ProductDetailsPageLocators.REVIEW_DETAILS_TAB_TITLE.getBy());
+    final private TextElement productPageTitle = new TextElement(driver, ProductDetailsPageLocators.PRODUCT_PAGE_TITLE);
+    final private TextElement productPrice = new TextElement(driver, ProductDetailsPageLocators.PRODUCT_PRICE);
+    final private TextElement reviewRate = new TextElement(driver, ProductDetailsPageLocators.REVIEW_RATE);
+    final private Link reviewsCount = new Link(driver, ProductDetailsPageLocators.REVIEWS_COUNT);
+    final private TextElement reviewDetailsTabTitle = new TextElement(driver, ProductDetailsPageLocators.REVIEW_DETAILS_TAB_TITLE);
 
     public ProductDetailsPage(WebDriver driver) {
         super(driver);

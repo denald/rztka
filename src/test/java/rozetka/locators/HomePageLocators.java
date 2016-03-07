@@ -12,8 +12,8 @@ public enum  HomePageLocators implements ILocator {
     ),
     SMARTPHONES_PAGE_LINK(
             "Smartphones page link",
-            LocatorsType.BY_PARTIAL_LINK_TEXT,
-            "Смартфоны"
+            LocatorsType.BY_XPATH,
+            "//a[@href='http://rozetka.com.ua/mobile-phones/c80003/filter/preset=smartfon/']"
     ),
     SUBMENU_PHONES(
             "Phones sub menu",

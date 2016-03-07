@@ -1,0 +1,61 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 87.793 sec <<< FAILURE! - in TestSuite
+testCase06(rozetka.tests.Tests)  Time elapsed: 5.536 sec  <<< FAILURE!
+java.lang.AssertionError: Unable to find element by By.name: search-button = "Search button"
+	at rozetka.tests.Tests.testCase06(Tests.java:120)
+Caused by: org.openqa.selenium.TimeoutException: 
+Timed out after 5 seconds waiting for element to be clickable: By.name: search-button
+Build info: version: '2.51.0', revision: '1af067dbcaedd7d2ab9af5151fc471d363d97193', time: '2016-02-05 11:20:57'
+System info: host: 'rv115', ip: '192.168.43.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_71'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=44.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: b12d3f95-d5a3-4046-a42b-4bc7a51ffef4
+	at rozetka.tests.Tests.testCase06(Tests.java:120)
+
+testFindButtonBehavior(rozetka.tests.Tests)  Time elapsed: 0.115 sec  <<< FAILURE!
+java.lang.AssertionError: Button is not visible expected [true] but found [false]
+	at rozetka.tests.Tests.testFindButtonBehavior(Tests.java:57)
+
+testKeyWord(rozetka.tests.Tests)  Time elapsed: 7.045 sec  <<< FAILURE!
+java.lang.AssertionError: Unable to find element by By.name: search-button = "Search button"
+	at rozetka.tests.Tests.testKeyWord(Tests.java:72)
+Caused by: org.openqa.selenium.TimeoutException: 
+Timed out after 5 seconds waiting for element to be clickable: By.name: search-button
+Build info: version: '2.51.0', revision: '1af067dbcaedd7d2ab9af5151fc471d363d97193', time: '2016-02-05 11:20:57'
+System info: host: 'rv115', ip: '192.168.43.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_71'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=44.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: b12d3f95-d5a3-4046-a42b-4bc7a51ffef4
+	at rozetka.tests.Tests.testKeyWord(Tests.java:72)
+
+testLogin(rozetka.tests.Tests)  Time elapsed: 12.838 sec  <<< FAILURE!
+java.lang.AssertionError: Unable to find element by By.name: login = "Email text box"
+	at rozetka.tests.Tests.testLogin(Tests.java:40)
+Caused by: org.openqa.selenium.TimeoutException: 
+Timed out after 5 seconds waiting for element to be clickable: By.name: login
+Build info: version: '2.51.0', revision: '1af067dbcaedd7d2ab9af5151fc471d363d97193', time: '2016-02-05 11:20:57'
+System info: host: 'rv115', ip: '192.168.43.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_71'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=44.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: b12d3f95-d5a3-4046-a42b-4bc7a51ffef4
+	at rozetka.tests.Tests.testLogin(Tests.java:40)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: {"method":"name","selector":"login"}
+Command duration or timeout: 10.74 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.51.0', revision: '1af067dbcaedd7d2ab9af5151fc471d363d97193', time: '2016-02-05 11:20:57'
+System info: host: 'rv115', ip: '192.168.43.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_71'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=44.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: b12d3f95-d5a3-4046-a42b-4bc7a51ffef4
+*** Element info: {Using=name, value=login}
+	at rozetka.tests.Tests.testLogin(Tests.java:40)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: {"method":"name","selector":"login"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.51.0', revision: '1af067dbcaedd7d2ab9af5151fc471d363d97193', time: '2016-02-05 11:20:57'
+System info: host: 'rv115', ip: '192.168.43.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_71'
+Driver info: driver.version: unknown
+

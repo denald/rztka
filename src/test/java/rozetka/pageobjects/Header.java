@@ -8,15 +8,15 @@ import rozetka.locators.HeaderLocators;
 
 public class Header <T> extends BasePage {
 
-    private Link logInLink = new Link(driver, HeaderLocators.LOGIN_LINK.getBy());
-    private TextBox emailTextBox = new TextBox(driver, HeaderLocators.EMAIL_TEXT_BOX.getBy());
-    private TextBox passwordTextBox = new TextBox(driver, HeaderLocators.PASSWORD_TEXT_BOX.getBy());
-    private Button loginButton = new Button(driver, HeaderLocators.LOGIN_BUTTON.getBy());
-    private TextBox searchBar = new TextBox(driver, HeaderLocators.SEARCH_BAR_TEXT_BOX.getBy());
-    private Button searchButton = new Button(driver, HeaderLocators.SEARCH_BUTTON.getBy());
-    private Button wishListIcon = new Button(driver, HeaderLocators.WISHLIST_ICON.getBy());
-    private Link closeConfirmEmailPopupLink = new Link(driver, HeaderLocators.CLOSE_CONFIRMATION_POPUP_LINK.getBy());
-    private Link signOutLink = new Link(driver, HeaderLocators.SIGNOUT_LINK.getBy());
+    private Link logInLink = new Link(driver, HeaderLocators.LOGIN_LINK);
+    private TextBox emailTextBox = new TextBox(driver, HeaderLocators.EMAIL_TEXT_BOX);
+    private TextBox passwordTextBox = new TextBox(driver, HeaderLocators.PASSWORD_TEXT_BOX);
+    private Button loginButton = new Button(driver, HeaderLocators.LOGIN_BUTTON);
+    private TextBox searchBar = new TextBox(driver, HeaderLocators.SEARCH_BAR_TEXT_BOX);
+    private Button searchButton = new Button(driver, HeaderLocators.SEARCH_BUTTON);
+    private Button wishListIcon = new Button(driver, HeaderLocators.WISHLIST_ICON);
+    private Link closeConfirmEmailPopupLink = new Link(driver, HeaderLocators.CLOSE_CONFIRMATION_POPUP_LINK);
+    private Link signOutLink = new Link(driver, HeaderLocators.SIGNOUT_LINK);
 
     public Header(WebDriver driver) {
         super(driver);
@@ -28,8 +28,8 @@ public class Header <T> extends BasePage {
 
     public void logOut(){
 
-        moveToElement(logInLink);
-        if (isElementPresent(signOutLink)) signOutLink.click();
+        moveToElement(logInLink.getLocator());
+        if (isElementPresent(signOutLink.getLocator())) signOutLink.click();
     }
 
     public Header logInAs(String login, String password){

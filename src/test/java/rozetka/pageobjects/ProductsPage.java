@@ -17,9 +17,10 @@ public class ProductsPage extends Header {
         super(driver);
     }
 
-    public void selectProductManufacturer(String manufacturer){
+    public ProductsPage selectProductManufacturer(String manufacturer){
         String productManufacturerLocator = String.format(_productManufacturerLocator, manufacturer);
         driver.findElement(By.xpath(productManufacturerLocator)).click();
+        return this;
     }
 
     public String getProductNameByPosition(int position){

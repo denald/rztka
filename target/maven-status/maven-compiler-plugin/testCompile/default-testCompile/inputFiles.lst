@@ -22,5 +22,6 @@ D:\IdeaProjects\rozetka\rztka\src\test\java\rozetka\locators\interfaces\ILocator
 D:\IdeaProjects\rozetka\rztka\src\test\java\rozetka\pageobjects\BasePage.java
 D:\IdeaProjects\rozetka\rztka\src\test\java\rozetka\pageobjects\Header.java
 D:\IdeaProjects\rozetka\rztka\src\test\java\rozetka\pageobjects\SearchPage.java
+D:\IdeaProjects\rozetka\rztka\src\test\java\rozetka\utils\TestListener.java
 D:\IdeaProjects\rozetka\rztka\src\test\java\rozetka\elements\HTMLElement.java
 D:\IdeaProjects\rozetka\rztka\src\test\java\rozetka\locators\ProductDetailsPageLocators.java

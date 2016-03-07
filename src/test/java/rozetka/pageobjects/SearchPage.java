@@ -15,9 +15,9 @@ import java.util.List;
 
 public class SearchPage extends Header {
 
-    final private TextElement searchResultTitleText = new TextElement(driver, SearchPageLocators.SEARCH_RESULTS_TITLE_TEXT.getBy());
-    final private Button submitToWishListPopupButton = new Button(driver, SearchPageLocators.SUBMIT_TO_WISHLIST_POPUP_BUTTON.getBy());
-    final private Button closeWishPopupIcon = new Button(driver, SearchPageLocators.CLOSE_WISHLIST_POPUP_ICON.getBy());
+    final private TextElement searchResultTitleText = new TextElement(driver, SearchPageLocators.SEARCH_RESULTS_TITLE_TEXT);
+    final private Button submitToWishListPopupButton = new Button(driver, SearchPageLocators.SUBMIT_TO_WISHLIST_POPUP_BUTTON);
+    final private Button closeWishPopupIcon = new Button(driver, SearchPageLocators.CLOSE_WISHLIST_POPUP_ICON);
     final private List<WebElement> titlesOnSearchPage = getAll(SearchPageLocators.TITLES_ON_SEARCH_PAGE.getBy());
     final private List<WebElement> reviewsCountList = getAll(SearchPageLocators.REVIEWS_COUNT_LIST.getBy());
 
