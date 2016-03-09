@@ -22,8 +22,8 @@ public enum HeaderLocators implements ILocator {
     ),
     LOGIN_BUTTON(
             "Login button",
-            LocatorsType.BY_NAME,
-            "auth_submit"
+            LocatorsType.BY_XPATH,
+            "//button[@name='auth_submit']"
     ),
     SEARCH_BAR_TEXT_BOX(
             "Search bar text box",
