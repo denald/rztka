@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="118.058" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="108.056" tests="6" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_71\jre\bin"/>
@@ -62,10 +62,30 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testCase05" classname="rozetka.tests.Tests" time="8.902"/>
-  <testcase name="testCase06" classname="rozetka.tests.Tests" time="16.925"/>
-  <testcase name="testFindButtonBehavior" classname="rozetka.tests.Tests" time="0.134"/>
-  <testcase name="testKeyWord" classname="rozetka.tests.Tests" time="7.449"/>
-  <testcase name="testLogin" classname="rozetka.tests.Tests" time="11.747"/>
-  <testcase name="testNewCategoriesArePresent" classname="rozetka.tests.Tests" time="0.043"/>
+  <testcase name="testCase05" classname="rozetka.tests.Tests" time="8.766"/>
+  <testcase name="testCase06" classname="rozetka.tests.Tests" time="15.088">
+    <failure message="Count of reviews isn&apos;t matching expected [31] but found [27]" type="java.lang.AssertionError">java.lang.AssertionError: Count of reviews isn't matching expected [31] but found [27]
+	at rozetka.tests.Tests.testCase06(Tests.java:132)
+</failure>
+    <system-out><![CDATA[Started running test: testCase06
+]]></system-out>
+  </testcase>
+  <testcase name="testFindButtonBehavior" classname="rozetka.tests.Tests" time="0.146"/>
+  <testcase name="testKeyWord" classname="rozetka.tests.Tests" time="7.916">
+    <failure message="Unable to find element by By.name: search-button = &quot;Search button&quot;" type="java.lang.AssertionError">java.lang.AssertionError: Unable to find element by By.name: search-button = "Search button"
+	at rozetka.tests.Tests.testKeyWord(Tests.java:75)
+Caused by: org.openqa.selenium.TimeoutException: 
+Timed out after 5 seconds waiting for element to be clickable: By.name: search-button
+Build info: version: '2.51.0', revision: '1af067dbcaedd7d2ab9af5151fc471d363d97193', time: '2016-02-05 11:20:57'
+System info: host: 'rv115', ip: '192.168.43.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_71'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 825793a3-92b2-4715-9f2d-15ee7d43e91a
+	at rozetka.tests.Tests.testKeyWord(Tests.java:75)
+</failure>
+    <system-out><![CDATA[Started running test: testKeyWord
+]]></system-out>
+  </testcase>
+  <testcase name="testLogin" classname="rozetka.tests.Tests" time="1.268"/>
+  <testcase name="testNewCategoriesArePresent" classname="rozetka.tests.Tests" time="0.045"/>
 </testsuite>

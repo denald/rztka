@@ -12,11 +12,181 @@
 <body>
 <h1>Surefire test</h1>
 <p>
-  Test duration: 117.774s
+  Test duration: 107.731s
 </p>
 
 
 
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">rozetka.tests.Tests</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testCase06
+      </td>
+  <td class="duration">
+    15.082s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        [INFO] - Clicked &apos;Search bar text box&apos;<br />
+                                [INFO] - Typed &apos;IPAD 16GB&apos; in &apos;Search bar text box&apos;<br />
+                                [INFO] - Clicked &apos;Search button&apos;<br />
+                                [INFO] - Getting text of &apos;Reviews count&apos;<br />
+                                testCase06 -- test method failed<br/>
+<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.AssertionError: Count of reviews isn&apos;t matching expected [31] but found [27]</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              org.testng.Assert.fail(Assert.java:94)<br />
+              org.testng.Assert.failNotEquals(Assert.java:494)<br />
+              org.testng.Assert.assertEquals(Assert.java:123)<br />
+              org.testng.Assert.assertEquals(Assert.java:370)<br />
+              rozetka.tests.Tests.testCase06(Tests.java:132)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:497)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
+              org.testng.TestRunner.run(TestRunner.java:617)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:240)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br />
+              org.testng.TestNG.run(TestNG.java:1031)<br />
+              org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:132)<br />
+              org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:193)<br />
+              org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:94)<br />
+              org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:147)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testKeyWord
+      </td>
+  <td class="duration">
+    7.919s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        [INFO] - Getting text of &apos;Login link&apos;<br />
+                                [INFO] - Clicked &apos;Login link&apos;<br />
+                                [INFO] - Typed &apos;denysltest12312313@gmail.com&apos; in &apos;Email text box&apos;<br />
+                                [INFO] - Typed &apos;qaZser56$&apos; in &apos;Password text box&apos;<br />
+                                [INFO] - Clicked &apos;Login button&apos;<br />
+                                [INFO] - Clicked &apos;Close confirmation pop up link&apos;<br />
+                                [INFO] - Clicked &apos;Search bar text box&apos;<br />
+                                [INFO] - Typed &apos;samsung&apos; in &apos;Search bar text box&apos;<br />
+                                testKeyWord -- test method failed<br/>
+<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.AssertionError: Unable to find element by By.name: search-button = &quot;Search button&quot;</b></a><br />
+    <div class="stackTrace" id="exception-1">
+              rozetka.elements.HTMLElement.waitUntil(HTMLElement.java:68)<br />
+              rozetka.elements.HTMLElement.waitUntil(HTMLElement.java:61)<br />
+              rozetka.elements.ClickableElement.click(ClickableElement.java:19)<br />
+              rozetka.pageobjects.Header.searchFor(Header.java:66)<br />
+              rozetka.tests.Tests.testKeyWord(Tests.java:75)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:497)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
+              org.testng.TestRunner.run(TestRunner.java:617)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:240)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br />
+              org.testng.TestNG.run(TestNG.java:1031)<br />
+              org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:132)<br />
+              org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:193)<br />
+              org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:94)<br />
+              org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:147)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)<br />
+              org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)<br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse">org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: By.name: search-button<br/>
+Build info: version: &apos;2.51.0&apos;, revision: &apos;1af067dbcaedd7d2ab9af5151fc471d363d97193&apos;, time: &apos;2016-02-05 11:20:57&apos;<br/>
+System info: host: &apos;rv115&apos;, ip: &apos;192.168.43.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_71&apos;<br/>
+Driver info: org.openqa.selenium.firefox.FirefoxDriver<br/>
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]<br/>
+Session ID: 825793a3-92b2-4715-9f2d-15ee7d43e91a</a><br />
+        <div class="stackTrace" id="exception-2">
+                      org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)<br />
+                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)<br />
+                      rozetka.elements.HTMLElement.waitUntil(HTMLElement.java:66)<br />
+                      rozetka.elements.HTMLElement.waitUntil(HTMLElement.java:61)<br />
+                      rozetka.elements.ClickableElement.click(ClickableElement.java:19)<br />
+                      rozetka.pageobjects.Header.searchFor(Header.java:66)<br />
+                      rozetka.tests.Tests.testKeyWord(Tests.java:75)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+                      sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.lang.reflect.Method.invoke(Method.java:497)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)<br />
+                      org.testng.internal.Invoker.invokeMethod(Invoker.java:714)<br />
+                      org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)<br />
+                      org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)<br />
+                      org.testng.TestRunner.privateRun(TestRunner.java:767)<br />
+                      org.testng.TestRunner.run(TestRunner.java:617)<br />
+                      org.testng.SuiteRunner.runTest(SuiteRunner.java:334)<br />
+                      org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)<br />
+                      org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)<br />
+                      org.testng.SuiteRunner.run(SuiteRunner.java:240)<br />
+                      org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+                      org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+                      org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)<br />
+                      org.testng.TestNG.runSuitesLocally(TestNG.java:1123)<br />
+                      org.testng.TestNG.run(TestNG.java:1031)<br />
+                      org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:132)<br />
+                      org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:193)<br />
+                      org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:94)<br />
+                      org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:147)<br />
+                      org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)<br />
+                      org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)<br />
+                      org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)<br />
+                  </div>
+          </div>
+      </td>
+</tr>
+      </table>
 
 
   <table class="resultsTable">
@@ -30,7 +200,7 @@
                   testCase05
       </td>
   <td class="duration">
-    8.902s
+    8.767s
   </td>
   <td class="result">
         
@@ -46,33 +216,10 @@
 </tr>
 <tr>
   <td class="method">
-                  testCase06
-      </td>
-  <td class="duration">
-    16.923s
-  </td>
-  <td class="result">
-        
-    
-            <div class="testOutput">
-                        [INFO] - Clicked &apos;Search bar text box&apos;<br />
-                                [INFO] - Typed &apos;IPAD 16GB&apos; in &apos;Search bar text box&apos;<br />
-                                [INFO] - Clicked &apos;Search button&apos;<br />
-                                [INFO] - Getting text of &apos;Reviews count&apos;<br />
-                                [INFO] - Clicked &apos;Reviews count&apos;<br />
-                                testCase06 -- test method success<br/>
-<br />
-                  </div>
-    
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
                   testFindButtonBehavior
       </td>
   <td class="duration">
-    0.142s
+    0.148s
   </td>
   <td class="result">
         
@@ -88,41 +235,10 @@
 </tr>
 <tr>
   <td class="method">
-                  testKeyWord
-      </td>
-  <td class="duration">
-    7.449s
-  </td>
-  <td class="result">
-        
-    
-            <div class="testOutput">
-                        [INFO] - Getting text of &apos;Login link&apos;<br />
-                                [INFO] - Clicked &apos;Login link&apos;<br />
-                                [INFO] - Typed &apos;denysltest12312313@gmail.com&apos; in &apos;Email text box&apos;<br />
-                                [INFO] - Typed &apos;qaZser56$&apos; in &apos;Password text box&apos;<br />
-                                [INFO] - Clicked &apos;Login button&apos;<br />
-                                [INFO] - Clicked &apos;Close confirmation pop up link&apos;<br />
-                                [INFO] - Clicked &apos;Search bar text box&apos;<br />
-                                [INFO] - Typed &apos;samsung&apos; in &apos;Search bar text box&apos;<br />
-                                [INFO] - Clicked &apos;Search button&apos;<br />
-                                [INFO] - Clicked &apos;Close confirmation pop up link&apos;<br />
-                                [INFO] - Clicked &apos;Submit to wishlist popup button&apos;<br />
-                                [INFO] - Clicked &apos;Close wishlist popup icon&apos;<br />
-                                [INFO] - Clicked &apos;Wishlist icon&apos;<br />
-                                testKeyWord -- test method success<br/>
-<br />
-                  </div>
-    
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
                   testLogin
       </td>
   <td class="duration">
-    11.747s
+    1.269s
   </td>
   <td class="result">
         
@@ -133,6 +249,7 @@
                                 [INFO] - Typed &apos;denysltest12312313@gmail.com&apos; in &apos;Email text box&apos;<br />
                                 [INFO] - Typed &apos;qaZser56$&apos; in &apos;Password text box&apos;<br />
                                 [INFO] - Clicked &apos;Login button&apos;<br />
+                                [INFO] - Clicked &apos;Close confirmation pop up link&apos;<br />
                                 [INFO] - Getting text of &apos;Login link&apos;<br />
                                 testLogin -- test method success<br/>
 <br />
@@ -146,7 +263,7 @@
                   testNewCategoriesArePresent
       </td>
   <td class="duration">
-    0.043s
+    0.046s
   </td>
   <td class="result">
         

@@ -1,4 +1,20 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 118.058 sec - in TestSuite
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 108.056 sec <<< FAILURE! - in TestSuite
+testCase06(rozetka.tests.Tests)  Time elapsed: 15.088 sec  <<< FAILURE!
+java.lang.AssertionError: Count of reviews isn't matching expected [31] but found [27]
+	at rozetka.tests.Tests.testCase06(Tests.java:132)
+
+testKeyWord(rozetka.tests.Tests)  Time elapsed: 7.916 sec  <<< FAILURE!
+java.lang.AssertionError: Unable to find element by By.name: search-button = "Search button"
+	at rozetka.tests.Tests.testKeyWord(Tests.java:75)
+Caused by: org.openqa.selenium.TimeoutException: 
+Timed out after 5 seconds waiting for element to be clickable: By.name: search-button
+Build info: version: '2.51.0', revision: '1af067dbcaedd7d2ab9af5151fc471d363d97193', time: '2016-02-05 11:20:57'
+System info: host: 'rv115', ip: '192.168.43.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_71'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 825793a3-92b2-4715-9f2d-15ee7d43e91a
+	at rozetka.tests.Tests.testKeyWord(Tests.java:75)
+

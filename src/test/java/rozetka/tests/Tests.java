@@ -134,7 +134,6 @@ public class Tests extends TestRunner {
         productDetailsPage.goToReviewsTab();
 //        Assert.assertTrue(productDetailsPage.getReviewDetailsTabTitle().isDisplayed(),
 //                "Reviews Tab is not desplayed");
-        System.out.println("Teardown method");
 
     }
 

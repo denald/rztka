@@ -12,8 +12,8 @@ public enum HeaderLocators implements ILocator {
     ),
     EMAIL_TEXT_BOX(
             "Email text box",
-            LocatorsType.BY_NAME,
-            "login"
+            LocatorsType.BY_XPATH,
+            "//input[@name='login']"
     ),
     PASSWORD_TEXT_BOX(
             "Password text box",
