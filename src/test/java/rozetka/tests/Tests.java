@@ -27,6 +27,7 @@ public class Tests extends TestRunner {
     public void setupMethod(){
         driver.get(BASE_URL);
         homePage = new HomePage(driver);
+        homePage.closePushNotificationPanel();
     }
 
     @AfterMethod

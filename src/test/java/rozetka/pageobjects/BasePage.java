@@ -32,7 +32,7 @@ public class BasePage {
 
     public void moveToElement(By elementBy){
         Actions action = new Actions(this.driver);
-        action.moveToElement(this.driver.findElement(elementBy)).perform();
+        action.moveToElement(this.driver.findElement(elementBy)).build().perform();
     }
 
     public boolean isElementPresent(By elementBy){

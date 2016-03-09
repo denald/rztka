@@ -1,6 +1,9 @@
 package rozetka.pageobjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import rozetka.elements.*;
@@ -18,6 +21,7 @@ public class Header <T> extends BasePage {
     private Link closeConfirmEmailPopupLink = new Link(driver, HeaderLocators.CLOSE_CONFIRMATION_POPUP_LINK);
     private Link signOutLink = new Link(driver, HeaderLocators.SIGNOUT_LINK);
 
+
     public Header(WebDriver driver) {
         super(driver);
     }
@@ -27,9 +31,11 @@ public class Header <T> extends BasePage {
     }
 
     public void logOut(){
+        logInLink.click();
+        if (isElementPresent(signOutLink.getLocator())){
+            signOutLink.click();
+        }
 
-        moveToElement(logInLink.getLocator());
-        if (isElementPresent(signOutLink.getLocator())) signOutLink.click();
     }
 
     public Header logInAs(String login, String password){
@@ -71,4 +77,9 @@ public class Header <T> extends BasePage {
     }
 
 
+    public void closePushNotificationPanel() {
+        if (isElementPresent(By.className("notificationPanelBlock"))){
+            driver.findElement(By.className("notificationPanelBlock")).click();
+        }
+    }
 }

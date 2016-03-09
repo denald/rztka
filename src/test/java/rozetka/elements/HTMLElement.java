@@ -38,7 +38,7 @@ public abstract class HTMLElement extends By {
     }
 
     public By getLocator(){
-        return locator;
+        return this.locator;
     }
 
     public String getElementName(){
