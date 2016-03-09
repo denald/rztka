@@ -32,7 +32,9 @@ public class Tests extends TestRunner {
 
     @AfterMethod
     public void tearDownMethod(){
-        homePage.logOut();
+        if (!homePage.getLoginLinkText().equals("войдите в личный кабинет")){
+            homePage.logOut();
+        }
     }
 
     @Test
