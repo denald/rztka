@@ -32,8 +32,8 @@ public enum HeaderLocators implements ILocator {
     ),
     SEARCH_BUTTON(
             "Search button",
-            LocatorsType.BY_NAME,
-            "search-button"
+            LocatorsType.BY_XPATH,
+            "//button[@name='search-button']"
     ),
     WISHLIST_ICON(
             "Wishlist icon",
