@@ -7,7 +7,7 @@ import rozetka.elements.Link;
 import rozetka.elements.TextElement;
 import rozetka.locators.ProductDetailsPageLocators;
 
-public class ProductDetailsPage extends Header {
+public class ProductDetailsPage extends BasePage {
 
     final private TextElement productPageTitle = new TextElement(driver, ProductDetailsPageLocators.PRODUCT_PAGE_TITLE);
     final private TextElement productPrice = new TextElement(driver, ProductDetailsPageLocators.PRODUCT_PRICE);

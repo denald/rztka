@@ -7,8 +7,9 @@ import rozetka.locators.WishlistPageLocators;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import rozetka.utils.Utils;
 
-public class WishListPage extends Header {
+public class WishListPage extends BasePage {
 
     private List<WebElement> itemsInWishlist = getAll(WishlistPageLocators.ITEMS_IN_WISHLIST.getBy());
 

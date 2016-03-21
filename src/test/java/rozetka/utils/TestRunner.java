@@ -1,4 +1,4 @@
-package rozetka.tests;
+package rozetka.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -14,6 +14,10 @@ import java.util.concurrent.TimeUnit;
 public class TestRunner {
     protected WebDriver driver;
 
+    public WebDriver getDriver(){
+        return driver;
+    }
+
     @BeforeClass
     public void setUp(){
         driver = new FirefoxDriver();
@@ -25,4 +29,6 @@ public class TestRunner {
     public void tearDown(){
         driver.quit();
     }
+
+
 }

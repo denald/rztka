@@ -1,14 +1,15 @@
 package rozetka.utils;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.*;
 
-/**
- * Created by dlapin on 3/7/2016.
- */
 public class TestListener extends TestListenerAdapter{
     @Override
     public void onTestFailure(ITestResult tr){
+        final Object currentClass = tr.getInstance();
+        final WebDriver driver = ((TestRunner) currentClass).getDriver();
         Reporter.log(tr.getName() + " -- test method failed\n");
+        Utils.takeScreenshot(driver);
         System.out.println("FAILED");
     }
 

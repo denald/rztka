@@ -5,16 +5,11 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.*;
 import rozetka.pageobjects.*;
+import rozetka.utils.TestRunner;
 import rozetka.utils.Utils;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
-/**
- * Created by dlapin on 2/10/2016.
- */
 public class Tests extends TestRunner {
 
     private String BASE_URL = "http://rozetka.com.ua";
@@ -27,21 +22,22 @@ public class Tests extends TestRunner {
     public void setupMethod(){
         driver.get(BASE_URL);
         homePage = new HomePage(driver);
-        homePage.closePushNotificationPanel();
+        homePage.header.closePushNotificationPanel();
     }
 
     @AfterMethod
     public void tearDownMethod(){
-        if (!homePage.getLoginLinkText().equals("войдите в личный кабинет")){
-            homePage.logOut();
+        if (!homePage.header.getLoginLinkText().equals("войдите в личный кабинет")){
+            homePage.header.logOut();
         }
     }
 
     @Test
     public void testLogin(){
-        homePage
+        homePage.header
                 .logInAs(USER_LOGIN, USER_PASSWORD);
-        Assert.assertTrue(homePage.getLoginLinkText().equals(USER_NAME));
+        Assert.assertTrue(homePage.header.getLoginLinkText().equals(USER_NAME));
+
     }
 
     @Test
@@ -56,11 +52,11 @@ public class Tests extends TestRunner {
 
     @Test
     public void testFindButtonBehavior(){
-        homePage.clickOnSearchBar();
-        Assert.assertTrue(homePage.searchButtonIsDisplayed(),
+        homePage.header.clickOnSearchBar();
+        Assert.assertTrue(homePage.header.searchButtonIsDisplayed(),
                 "Button is not visible");
         Utils.removeFocusFromEverything(driver);
-        Assert.assertFalse(homePage.searchButtonIsDisplayed(),
+        Assert.assertFalse(homePage.header.searchButtonIsDisplayed(),
                 "Button is still visible");
     }
 
@@ -71,6 +67,7 @@ public class Tests extends TestRunner {
         int position = 3;
 
         SearchPage searchPage = homePage
+                .header
                 .logInAs(USER_LOGIN, USER_PASSWORD)
                 .searchFor(keyword);
 
@@ -84,9 +81,12 @@ public class Tests extends TestRunner {
 
         List<String> list = searchPage
                 .addToWishList(position)
+                .header
                 .goToWishList()
                 // take screenshot
                 .getNamesOfItemsInWishlist();
+
+
 
         Assert.assertTrue(list.contains(productName),
                 "Item is not present in wishlist");
@@ -120,7 +120,7 @@ public class Tests extends TestRunner {
         final int productPosition = 1;
         SearchPage searchPage;
 
-        searchPage = homePage.searchFor(SEARCH_PHRASE);
+        searchPage = homePage.header.searchFor(SEARCH_PHRASE);
         List<String> searchResultsTitles = searchPage.getListOfTitles();
         for (String title: searchResultsTitles) {
             Assert.assertTrue(title.contains(KEYWORD),

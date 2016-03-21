@@ -11,11 +11,13 @@ import rozetka.locators.HomePageLocators;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomePage extends Header {
+public class HomePage extends BasePage {
 
     final private List<WebElement> newBadges = getAll(HomePageLocators.NEW_BADGES_ICON.getBy());
     final private Link smartphonesLink = new Link(driver, HomePageLocators.SMARTPHONES_PAGE_LINK);
     final private Link subMenuPhones = new Link(driver, HomePageLocators.SUBMENU_PHONES);
+
+    public Header header = new Header(driver);
 
 
     public HomePage(WebDriver driver){

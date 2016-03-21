@@ -13,13 +13,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SearchPage extends Header {
+public class SearchPage extends BasePage {
 
     final private TextElement searchResultTitleText = new TextElement(driver, SearchPageLocators.SEARCH_RESULTS_TITLE_TEXT);
     final private Button submitToWishListPopupButton = new Button(driver, SearchPageLocators.SUBMIT_TO_WISHLIST_POPUP_BUTTON);
     final private Button closeWishPopupIcon = new Button(driver, SearchPageLocators.CLOSE_WISHLIST_POPUP_ICON);
     final private List<WebElement> titlesOnSearchPage = getAll(SearchPageLocators.TITLES_ON_SEARCH_PAGE.getBy());
     final private List<WebElement> reviewsCountList = getAll(SearchPageLocators.REVIEWS_COUNT_LIST.getBy());
+
+    public Header header = new Header(driver);
 
     public SearchPage(WebDriver driver) {
         super(driver);
